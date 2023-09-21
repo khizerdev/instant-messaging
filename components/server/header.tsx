@@ -4,6 +4,7 @@ import React from 'react'
 import { ServerWithMembersWithProfiles } from "@/type";
 import { MemberRole } from "@prisma/client";
 
+import { ModalStore } from '@/store/ModalStore';
 import { 
     ChevronDown, 
     LogOut, 
@@ -29,6 +30,8 @@ interface ServerHeaderProps {
 
 const Header: React.FC<ServerHeaderProps> = ({server,role}) => {
 
+  const { onOpen } = ModalStore();
+
   const isAdmin = role === MemberRole.ADMIN;
   const isModerator = isAdmin || role === MemberRole.MODERATOR;
 
@@ -50,8 +53,8 @@ const Header: React.FC<ServerHeaderProps> = ({server,role}) => {
       >
         {isModerator && (
           <DropdownMenuItem
-            onClick={() => {}}
-            className="text-orange-500 dark:text-orange-400 px-3 py-2 text-sm cursor-pointer"
+            onClick={() => onOpen("invite", { server })}
+            className="text-indigo-600 dark:text-indigo-400 px-3 py-2 text-sm cursor-pointer"
           >
             Invite People
             <UserPlus className="h-4 w-4 ml-auto" />
