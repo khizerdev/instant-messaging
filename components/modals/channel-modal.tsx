@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import qs from "query-string";
 import axios from "axios";
 import * as z from "zod";
@@ -48,13 +49,23 @@ const ChannelModal = () => {
     return isOpen && type === "createChannel"
   },[isOpen,type]);
 
+  const { channelType } = data;
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
         name: "",
-        type: ChannelType.TEXT,
+        type: channelType || ChannelType.TEXT,
     }
   });
+
+  useEffect(() => {
+    if (channelType) {
+      form.setValue("type", channelType);
+    } else {
+      form.setValue("type", ChannelType.TEXT);
+    }
+  }, [channelType, form]);
 
   const isLoading = form.formState.isSubmitting;
 

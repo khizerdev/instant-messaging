@@ -6,7 +6,7 @@ export type ModalType = "createServer" | "invite" | "editServer" | "members" | "
 interface ModalData {
   server?: Server;
   channel?: Channel;
-  channelType?: ChannelType;
+  channelType?: ChannelType; // channel type added
   apiUrl?: string;
 }
 
