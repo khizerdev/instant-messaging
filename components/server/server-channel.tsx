@@ -21,7 +21,7 @@ const iconMap = {
 }
 
 export const ServerChannel: React.FC<ServerChannelProps> = ({ channel, server, role }) => {
-  const { onOpen } = ModalStore();
+  const { onOpen } = ModalStore(); // call on open store
   const params = useParams();
   const router = useRouter();
 
