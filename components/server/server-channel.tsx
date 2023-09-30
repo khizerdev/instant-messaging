@@ -28,7 +28,7 @@ export const ServerChannel: React.FC<ServerChannelProps> = ({ channel, server, r
   const Icon = iconMap[channel.type];
 
   const onClick = () => {
-    router.push(`/servers/${params?.serverId}/channels/${channel.id}`)
+    router.push(`/servers/${params?.serverId}/channels/${channel.id}`) //navigate to server channel page
   }
 
   const onAction = (e: React.MouseEvent, action: ModalType) => {

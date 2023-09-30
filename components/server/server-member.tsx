@@ -28,7 +28,7 @@ export const ServerMember = ({
   const icon = roleIconMap[member.role];
 
   const onClick = () => {
-    router.push(`/servers/${params?.serverId}/conversations/${member.id}`)
+    router.push(`/servers/${params?.serverId}/conversations/${member.id}`) //navigate to server channel page
   }
 
   return (
