@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
 import { currentProfile } from "@/lib/current-profile";
-import Sidebar from "@/components/server/sidebar";
+import ServerSidebar from "@/components/server/sidebar";
 
 interface IServerIdLayout {
     children: React.ReactNode;
@@ -36,7 +36,7 @@ const ServerIdLayout: React.FC<IServerIdLayout> = async ({ children,params}) => 
   return ( 
     <div className="h-full">
       <div className="hidden md:flex h-full w-60 z-20 flex-col fixed inset-y-0">
-        <Sidebar serverId={params.serverId}/>
+        <ServerSidebar serverId={params.serverId}/>
       </div>
       <main className="h-full md:pl-60">
         {children}

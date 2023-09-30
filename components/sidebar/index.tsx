@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ModeToggle } from "@/components/mode-toggle";
 
-const Sidebar = async () => {
+const NavigationSidebar = async () => {
 
     const profile = await currentProfile();
 
@@ -60,4 +60,5 @@ const Sidebar = async () => {
     )
 }
 
-export default Sidebar
+export default NavigationSidebar
+

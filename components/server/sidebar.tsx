@@ -32,7 +32,7 @@ const roleIconMap = {
   [MemberRole.ADMIN]: <ShieldAlert className="h-4 w-4 mr-2 text-rose-500" />
 }
 
-const Sidebar: React.FC<ISidebarProps> = async ({serverId}) => {
+const ServerSidebar: React.FC<ISidebarProps> = async ({serverId}) => {
 
   const profile = await currentProfile();
 
@@ -206,4 +206,4 @@ const Sidebar: React.FC<ISidebarProps> = async ({serverId}) => {
   )
 }
 
-export default Sidebar
+export default ServerSidebar
